@@ -1,0 +1,31 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+          http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+
+	<display-name>Archetype Created Web Application</display-name>
+
+	<servlet>
+		<servlet-name>LogsServletWithJAXRS</servlet-name>
+		<servlet-class>org.apache.cxf.jaxrs.servlet.CXFNonSpringJaxrsServlet</servlet-class>
+		<init-param>
+			<param-name>javax.ws.rs.Application</param-name>
+			<param-value>mg.dida.samplemongojeewithjax.application.OwnApplication</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LogsServletWithJAXRS</servlet-name>
+		<url-pattern>/jaxrs/*</url-pattern>
+	</servlet-mapping>
+
+	<listener>
+		<listener-class>com.mongodb.jee.servlet.MongoServletContextListener</listener-class>
+	</listener>
+
+	<context-param>
+		<param-name>mongoURI</param-name>
+		<param-value>mongodb://localhost:27017</param-value>
+	</context-param>
+
+</web-app>

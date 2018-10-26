@@ -7,6 +7,11 @@
 	<version>0.1.0-SNAPSHOT</version>
 	<name>samplemongojeewithjax Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jetty-version>9.3.24.v20180605</jetty-version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -17,7 +22,7 @@
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-webapp</artifactId>
-			<version>9.3.3.v20150827</version>
+            <version>${jetty-version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mongojack</groupId>
